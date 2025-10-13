@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 public class p8_1253 {
 
   public static void main(String[] args) throws IOException {
-
+/// g5
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int count = Integer.parseInt(br.readLine());
     int[] arr = new int[count];
