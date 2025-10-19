@@ -1,4 +1,4 @@
-package problem1_10;
+package dataStructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;

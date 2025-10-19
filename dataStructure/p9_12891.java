@@ -1,4 +1,4 @@
-package problem1_10;
+package dataStructure;
 
 import java.io.*;
 import java.util.*;
@@ -6,12 +6,20 @@ import java.util.*;
 public class p9_12891 {
 
     public static void main(String[] args) throws IOException {
+
+        ///  s5
+        //*
+        //
+        //
+        //
+        // */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int S = Integer.parseInt(st.nextToken());
-        int P = Integer.parseInt(st.nextToken());
-        char[] str = br.readLine().toCharArray();
+        int strSize = Integer.parseInt(st.nextToken()); // 문자열 길이
+        int partSize = Integer.parseInt(st.nextToken()); // 윈도우 길이
+        char[] str = br.readLine().toCharArray();  //문자열 입력
+
 
         int[] minCount = new int[4]; // A, C, G, T
         st = new StringTokenizer(br.readLine());
@@ -22,15 +30,15 @@ public class p9_12891 {
         int[] count = new int[4];
         int result = 0;
 
-        for (int i = 0; i < P; i++) {
+        for (int i = 0; i < partSize; i++) {
             add(count, str[i]);
         }
 
         if (check(count, minCount)) result++;
 
-        for (int i = P; i < S; i++) {
+        for (int i = partSize; i < strSize; i++) {
             add(count, str[i]);
-            remove(count, str[i - P]);
+            remove(count, str[i - partSize]);
             if (check(count, minCount)) result++;
         }
 
